@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 // import Header from "./components/Header";
 // import "./styles.css";
 import "./App.css";
@@ -66,13 +66,13 @@ function App() {
     let headline = city.headline;
     let desc = city.description;
     return (
-      <div key={id}>
-        <ul>
+      <Fragment>
+        <ul key={id}>
           <li>{headline}</li>
           <li>{desc}</li>
         </ul>
         <hr />
-      </div>
+      </Fragment>
     );
   });
   return <div> {category} </div>;
