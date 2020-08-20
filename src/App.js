@@ -68,8 +68,12 @@ function App() {
     return (
       <Fragment>
         <ul key={id}>
-          <li>{headline}</li>
-          <li>{desc}</li>
+          <li>
+            <h4>{headline}</h4>
+          </li>
+          <li>
+            <p>{desc}</p>
+          </li>
         </ul>
         <hr />
       </Fragment>
