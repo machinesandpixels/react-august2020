@@ -1,13 +1,10 @@
-import React, { Component } from "react";
-import Header from "./components/Header";
+import React, { useState } from "react";
+// import Header from "./components/Header";
 // import "./styles.css";
 import "./App.css";
 
-class App extends Component {
-  // state = {
-  //   name: "Hello00"
-  // };
-  state = {
+function App() {
+  const [state] = useState({
     categories: [
       {
         icon: "city",
@@ -63,39 +60,22 @@ class App extends Component {
           "Innenarchitektur und Design CAD / Rendering / Illustration durch eigene Innenarchitekten / Designer"
       }
     ]
-  };
+  });
 
-  render() {
-    const styles = {
-      ul: "listStyleType: none",
-      hr: "border-top: 1px solid red",
-      li: "margin: 0 1rem 0"
-    };
-
-    let data = this.state.categories.map((city, id) => {
-      let headline = city.headline;
-      let desc = city.description;
-      /* console.log(headline);
-      console.log(desc); */
-      // <ul style={{ color: "red" }}>
-      return (
-        <div key={id} style={styles}>
-          <ul>
-            <li>{headline}</li>
-            <li>{desc}</li>
-          </ul>
-          <hr />
-        </div>
-      );
-    });
-
+  let category = state.categories.map((city, id) => {
+    let headline = city.headline;
+    let desc = city.description;
     return (
-      <div className="">
-        <Header />
-        {data}
+      <div key={id}>
+        <ul>
+          <li>{headline}</li>
+          <li>{desc}</li>
+        </ul>
+        <hr />
       </div>
     );
-  }
+  });
+  return <div> {category} </div>;
 }
 
 export default App;
