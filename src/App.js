@@ -1,7 +1,18 @@
 import React, { Fragment, useState } from "react";
-// import Header from "./components/Header";
 // import "./styles.css";
 import "./App.css";
+// import Header from "./components/Header";
+import Icon from "./components/Icon";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCity,
+  faHouseDamage,
+  faPaintRoller,
+  faBrush
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(fab, faCity, faHouseDamage, faPaintRoller, faBrush);
 
 function App() {
   const [state] = useState({
@@ -79,7 +90,12 @@ function App() {
       </Fragment>
     );
   });
-  return <div> {category} </div>;
+  return (
+    <div>
+      <Icon />
+      {category}
+    </div>
+  );
 }
 
 export default App;
