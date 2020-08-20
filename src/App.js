@@ -66,6 +66,12 @@ class App extends Component {
   };
 
   render() {
+    const styles = {
+      ul: "listStyleType: none",
+      hr: "border-top: 1px solid red",
+      li: "margin: 0 1rem 0"
+    };
+
     let data = this.state.categories.map((city, id) => {
       let headline = city.headline;
       let desc = city.description;
@@ -73,7 +79,7 @@ class App extends Component {
       console.log(desc); */
       // <ul style={{ color: "red" }}>
       return (
-        <div key={id}>
+        <div key={id} style={styles}>
           <ul>
             <li>{headline}</li>
             <li>{desc}</li>
