@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from "react";
-// import "./styles.css";
 import "./App.css";
-// import Header from "./components/Header";
 import Icon from "./components/Icon";
+import styled from "@emotion/styled";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -13,6 +12,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(fab, faCity, faHouseDamage, faPaintRoller, faBrush);
+
+// const Grid = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(24, 1fr);
+//   width: 100%;
+//   height: 100vh;
+// `;
 
 function App() {
   const [state] = useState({
