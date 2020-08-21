@@ -1,15 +1,17 @@
 import React, { Fragment, useState } from "react";
-import "./App.css";
-import Icon from "./components/Icon";
-import styled from "@emotion/styled";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCity,
   faHouseDamage,
   faPaintRoller,
   faBrush
 } from "@fortawesome/free-solid-svg-icons";
+import Hr from "./components/Hr";
+// import styled from "@emotion/styled";
+// import Icon from "./components/Icon";
+import "./App.css";
 
 library.add(fab, faCity, faHouseDamage, faPaintRoller, faBrush);
 
@@ -79,11 +81,13 @@ function App() {
     ]
   });
 
-  let category = state.categories.map((city, id) => {
+  const category = state.categories.map((city, id) => {
     let headline = city.headline;
     let desc = city.description;
+    let icon = city.icon;
     return (
       <Fragment>
+        <FontAwesomeIcon icon={icon} />
         <ul key={id}>
           <li>
             <h4>{headline}</h4>
@@ -92,16 +96,11 @@ function App() {
             <p>{desc}</p>
           </li>
         </ul>
-        <hr />
+        <Hr />
       </Fragment>
     );
   });
-  return (
-    <div>
-      <Icon />
-      {category}
-    </div>
-  );
+  return <div>{category}</div>;
 }
 
 export default App;
